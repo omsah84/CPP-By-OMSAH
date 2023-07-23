@@ -23,7 +23,14 @@ int main()
 
     unsigned int num1 = -12;
     cout << "Storing signed value in unsigned value in:-) " <<num1 <<endl;
+
+    long g = 234;
+    cout << "The size of long:-) " <<sizeof(g)<<endl;
+
+    short h = 34;
+    cout << "The size of short:-) " <<sizeof(h)<<endl;
     
+
     
     return 0;
 }
