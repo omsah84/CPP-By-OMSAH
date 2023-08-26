@@ -31,4 +31,4 @@ int main()
     cout << "The size of short:-) " << sizeof(h) << endl;
 
     return 0;
-}
+}       
