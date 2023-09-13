@@ -1,11 +1,9 @@
 //print prime number in a given range
-
 #include<iostream>
 using namespace std;
 
 //to check is it prime number or not
-bool isPrimeNumber(int number){
-    
+bool isPrimeNumber(int number){   
     int i = 2;
     while (i<number)
     {
