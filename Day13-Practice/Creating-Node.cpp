@@ -6,7 +6,7 @@ class Node
 {
 public:
     int data;
-    Node* next;
+    Node *next;
     Node(int data)
     {
         this->data = data;
@@ -28,7 +28,7 @@ void print(Node *&head)
 // insertathead
 void insertAtHead(Node *&head, int data)
 {
-    Node* newNode =new  Node(data);
+    Node *newNode = new Node(data);
 
     if (head != NULL)
     {
@@ -38,32 +38,31 @@ void insertAtHead(Node *&head, int data)
     head = newNode;
 }
 
+void insertAtEnd(Node *&head, int data)
+{
+    Node *newNode = new Node(data);
 
-void insertAtEnd(Node* &head, int data){
-    Node* newNode = new Node(data);
+    Node *temp = head;
 
-    Node* temp = head;
-
-    while (temp->next !=NULL)
+    while (temp->next != NULL)
     {
         temp = temp->next;
     }
 
     temp->next = newNode;
-    
 }
 
+void insertAtPosition(Node *&head, int data, int position)
+{
+    Node *newNode = new Node(data);
 
-void insertAtPosition(Node* &head, int data, int position){
-    Node* newNode = new Node(data);
+    Node *startNode = head;
+    Node *nextNode = startNode->next;
 
-    Node* startNode = head;
-    Node* nextNode = startNode->next;
-
-    while(position>0){
+    while (position > 0)
+    {
         startNode = startNode->next;
         nextNode = startNode->next;
-        
         position--;
     }
     newNode->next = nextNode;
@@ -72,30 +71,26 @@ void insertAtPosition(Node* &head, int data, int position){
 
 int main()
 {
-    Node* node = new Node(20);
+    Node *node = new Node(20);
     print(node);
-    cout<<endl;
+    cout << endl;
 
     insertAtHead(node, 30);
     insertAtHead(node, 40);
     insertAtHead(node, 50);
     print(node);
-    cout<<endl;
+    cout << endl;
 
-    insertAtEnd(node,30);
-    insertAtEnd(node,40);
-    insertAtEnd(node,50);
+    insertAtEnd(node, 30);
+    insertAtEnd(node, 40);
+    insertAtEnd(node, 50);
     print(node);
-    cout<<endl;
+    cout << endl;
 
-
-    insertAtPosition(node, 100,3);
-    insertAtPosition(node, 200,4);
-    insertAtPosition(node, 300,5);
+    insertAtPosition(node, 100, 3);
+    insertAtPosition(node, 200, 4);
+    insertAtPosition(node, 300, 5);
     print(node);
 
-    
-    
     return 0;
-
 }
